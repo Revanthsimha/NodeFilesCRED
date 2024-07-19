@@ -7,11 +7,17 @@ const authenticate = (req, res, next) => {
 
 		req.user = decode;
 		next();
-	} catch (err) {
-		res.json({
-			message: "Authentication Failed!",
-		});
+	} catch (error) {
+		if (error.name == "TokenExpiredError") {
+			res.status(401).json({
+				message: "Token Expired",
+			});
+		} else {
+			res.json({
+				message: "Authentication Failed!",
+			});
+		}
 	}
 };
 
-module.exports = authenticate
+module.exports = authenticate;
