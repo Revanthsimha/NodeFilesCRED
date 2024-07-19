@@ -1,0 +1,68 @@
+[{
+  "_id": {
+    "$oid": "6697973e361f12c3aec7916d"
+  },
+  "name": "Raju",
+  "designation": "Software Engineer",
+  "email": "Raju@gmail.com",
+  "phone": "8520147963",
+  "age": 23,
+  "createdAt": {
+    "$date": "2024-07-17T10:04:46.572Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T10:04:46.572Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66979e6dc7b2df162fdf62bc"
+  },
+  "name": "Ravi",
+  "designation": "Software Engineer",
+  "email": "Ravi@gmail.com",
+  "phone": "7410258963",
+  "age": 24,
+  "createdAt": {
+    "$date": "2024-07-17T10:35:25.490Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T10:35:25.490Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66979f8cc7b2df162fdf62c1"
+  },
+  "name": "Ram",
+  "designation": "Software Engineer",
+  "email": "Ram@gmail.com",
+  "phone": "8520147963",
+  "age": 25,
+  "createdAt": {
+    "$date": "2024-07-17T10:40:12.967Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T10:40:12.967Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66979fa2c7b2df162fdf62c3"
+  },
+  "name": "Krishna",
+  "designation": "Software Engineer",
+  "email": "Krishna@gmail.com",
+  "phone": "9630258741",
+  "age": 24,
+  "createdAt": {
+    "$date": "2024-07-17T10:40:34.169Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T10:40:34.169Z"
+  },
+  "__v": 0
+}]
