@@ -49,14 +49,14 @@ const login = (req, res, next) => {
 						});
 					}
 					if (result) {
-						let token = jwt.sign({ name: user.name }, "AzQ,PI)0(", {
-							expiresIn: "30s",
+						let token = jwt.sign({ name: user.name }, process.env.ACCESS_TOKEN_SECRET, {
+							expiresIn: process.env.ACCESS_TOKEN_EXPIRE_TIME,
 						});
 						let refreshToken = jwt.sign(
 							{ name: user.name },
-							"refreshtokensecret",
+							process.env.REFRESH_TOKEN_SECRET,
 							{
-								expiresIn: "48h",
+								expiresIn: process.env.REFRESH_TOKEN_EXPIRE_TIME,
 							}
 						);
 						res.status(200).json({
@@ -81,14 +81,14 @@ const login = (req, res, next) => {
 
 const refreshToken = (req, res, next) => {
 	const refreshToken = req.body.refreshToken;
-	jwt.verify(refreshToken, "refreshtokensecret", function (err, decode) {
+	jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, function (err, decode) {
 		if (err) {
 			res.status(400).json({
 				err,
 			});
 		} else {
-			let token = jwt.sign({ name: decode.name }, "AzQ,PI)0(", {
-				expiresIn: "60s",
+			let token = jwt.sign({ name: decode.name }, process.env.ACCESS_TOKEN_SECRET, {
+				expiresIn: process.env.ACCESS_TOKEN_EXPIRE_TIME,
 			});
 			let refreshToken = req.body.refreshToken;
 			res.status(200).json({
