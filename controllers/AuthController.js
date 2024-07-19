@@ -39,9 +39,8 @@ const login = (req, res, next) => {
 	var username = req.body.username;
 	var password = req.body.password;
 
-	User
-		.findOne({ $or: [{ email: username }, { phone: username }] })
-		.then((user) => {
+	User.findOne({ $or: [{ email: username }, { phone: username }] }).then(
+		(user) => {
 			if (user) {
 				bcrypt.compare(password, user.password, function (err, result) {
 					if (err) {
@@ -50,7 +49,7 @@ const login = (req, res, next) => {
 						});
 					}
 					if (result) {
-						let token = jwt.sign({ name: user.name }, "verySecretValue", {
+						let token = jwt.sign({ name: user.name }, "AzQ,PI)0(", {
 							expiresIn: "1h",
 						});
 						res.json({
@@ -68,9 +67,11 @@ const login = (req, res, next) => {
 					message: "User not found!",
 				});
 			}
-		});
+		}
+	);
 };
 
 module.exports = {
-	register,login
+	register,
+	login,
 };
